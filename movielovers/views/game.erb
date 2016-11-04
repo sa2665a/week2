@@ -1,0 +1,41 @@
+
+
+<!doctype html>
+<html>
+    <head>
+        <title>Movie Lovers</title>
+
+    
+    </head>
+    <body style="background-color:lightblue;">
+        <h1>Movie Lovers</h1>
+
+        <p>
+            You searched for:
+            <strong><%= @title %></strong>.
+        </p>
+        <p>
+            The total results are:
+            <strong><%= @results %></strong>.
+        </p>
+        <p>
+            <strong>Which movie was released in <%= @year.to_s %></strong>
+
+
+        </p>
+            <%@movies.each do |movie| %>
+                <div>
+                 
+                  <% if movie.year== @year %> 
+                   	<input type="image" src="<%= movie.poster %>" name="submit" id="correct" width="250" height="300" style="float:left" hspace="20" onClick="alert('Correct!')">
+                  <% else %>
+                     <input type="image" src="<%= movie.poster %>" name="submit" id="incorrect" width="250" height="300" style="float:left" hspace="20" onClick="alert('You are wrong!')">
+                  <% end %>
+              </div>
+            <%end%>
+  
+     
+
+     
+    </body>
+</html>

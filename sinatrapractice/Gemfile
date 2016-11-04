@@ -1,0 +1,28 @@
+# gemfile
+
+source 'https://rubygems.org'
+
+gem 'rspec'
+gem 'guard'
+gem 'guard-rspec'
+gem 'sinatra'
+gem 'sinatra-contrib'
+gem 'haml'
+
+
+# codigo en app 
+ 
+require 'sinatra'
+require 'haml'
+require "sinatra/reloader" if development?
+
+set :haml, format: :html5
+enable(:sessions)
+
+get '/' do
+ erb(:index)
+end
+
+#crea carpeta views, index.erb
+#consola 
+
